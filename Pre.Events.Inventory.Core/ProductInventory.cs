@@ -6,8 +6,10 @@ public class ProductInventory
     public int ItemsInStock { get; private set; }
 
     public delegate void ProductShortageHandler(object sender, ProductShortageEventArgs e);
+    public delegate void ProductExcessHandler(object sender, EventArgs e);
 
     public event ProductShortageHandler? ProductShortage;
+    public event ProductExcessHandler? ProductExcess;
 
 
     public ProductInventory(string productName)
@@ -19,6 +21,12 @@ public class ProductInventory
     public int Buy(int amount)
     {
         ItemsInStock += amount;
+
+        if (ItemsInStock > 100)
+        {
+            ProductExcess?.Invoke(this, EventArgs.Empty);
+        }
+
         return ItemsInStock;
     }
 

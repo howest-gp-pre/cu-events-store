@@ -16,6 +16,12 @@ namespace Pre.Events.Inventory.Core
         public void AddProduct(ProductInventory p)
         {
             Products.Add(p);
+            p.ProductShortage += this.ProductShortageHandlerSupplier;
+        }
+
+        public void ProductShortageHandlerSupplier(object sender, ProductShortageEventArgs e)
+        {
+            Console.WriteLine($"{e.ToBuy} {e.Name} ordered with {Name}");
         }
     }
 }

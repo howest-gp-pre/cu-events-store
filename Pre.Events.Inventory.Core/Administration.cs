@@ -7,6 +7,11 @@ namespace Pre.Events.Inventory.Core
         {
             Console.WriteLine($"There is a shortage of {e.Name}.");
         }
+
+        public void RunPromotion(object sender, EventArgs e)
+        {
+            Console.WriteLine($"Run a promotion");
+        }
     }
 }
 
