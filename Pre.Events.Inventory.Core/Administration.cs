@@ -5,12 +5,12 @@ namespace Pre.Events.Inventory.Core
     {
         public void ProductShortageHandlerAdministration(object sender, ProductShortageEventArgs e)
         {
-            Console.WriteLine($"There is a shortage of {e.Name}.");
+            Console.WriteLine($"There is a shortage of {e.Product}. Please buy {e.ToBuy}");
         }
 
-        public void RunPromotion(object sender, EventArgs e)
+        public void RunPromotion(object sender, ProductExcessEventArgs e)
         {
-            Console.WriteLine($"Run a promotion");
+            Console.WriteLine($"Run a promotion for {e.Product}. There is an excess of {e.ExcessAmount}.");
         }
     }
 }

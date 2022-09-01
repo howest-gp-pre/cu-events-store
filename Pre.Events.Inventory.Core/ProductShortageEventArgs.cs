@@ -3,12 +3,12 @@ namespace Pre.Events.Inventory.Core
 {
     public class ProductShortageEventArgs : EventArgs
     {
-        public string Name { get; }
+        public Product Product { get; }
         public int ToBuy { get; }
 
-        public ProductShortageEventArgs(string name, int tobuy)
+        public ProductShortageEventArgs(Product product, int tobuy)
         {
-            Name = name;
+            Product = product;
             ToBuy = tobuy;
         }
     }

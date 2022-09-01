@@ -10,13 +10,14 @@ namespace Pre.Events.Inventory.Cons
             Administration a = new Administration();
             Supplier fruitsSupplier = new Supplier("Groenten en fruit Janssen");
 
-            ProductInventory apple = new ProductInventory("Apple");
-            fruitsSupplier.AddProduct(apple);
+            Product apple = new Product("Apple", 2.19m);
+            ProductInventory applesupply = new ProductInventory(apple, 10);
+            applesupply.Supplier = fruitsSupplier;
 
-            apple.ProductShortage += a.ProductShortageHandlerAdministration;
-            apple.ProductExcess += a.RunPromotion;
+            applesupply.ProductShortage += a.ProductShortageHandlerAdministration;
+            applesupply.ProductExcess += a.RunPromotion;
 
-            DoSimulation(apple);
+            DoSimulation(applesupply);
         }
 
         public void DoSimulation(ProductInventory p)
@@ -30,7 +31,7 @@ namespace Pre.Events.Inventory.Cons
 
                 int newamount = buyOrSell == "buy" ? p.Buy(amount) : p.Sell(amount);
 
-                Console.WriteLine($"We now have {newamount} items of the product {p.ProductName}");
+                Console.WriteLine($"We now have {newamount} items of the product {p.Product}");
 
                 Console.Write("buy or sell? ");
                 buyOrSell = Console.ReadLine();

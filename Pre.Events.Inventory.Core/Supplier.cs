@@ -5,23 +5,27 @@ namespace Pre.Events.Inventory.Core
     {
         public string Name { get; }
 
-        public List<ProductInventory> Products { get; }
+        public List<Product> Products { get; }
 
         public Supplier(string name)
         {
             Name = name;
-            Products = new List<ProductInventory>();
+            Products = new List<Product>();
         }
 
-        public void AddProduct(ProductInventory p)
+        public void AddProduct(Product p)
         {
             Products.Add(p);
-            p.ProductShortage += this.ProductShortageHandlerSupplier;
         }
 
         public void ProductShortageHandlerSupplier(object sender, ProductShortageEventArgs e)
         {
-            Console.WriteLine($"{e.ToBuy} {e.Name} ordered with {Name}");
+            Console.WriteLine($"{e.ToBuy} of {e.Product} ordered with {Name}");
+        }
+
+        public void RemoveProduct(Product product)
+        {
+            Products.Remove(product);
         }
     }
 }
