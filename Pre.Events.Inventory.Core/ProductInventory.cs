@@ -26,7 +26,8 @@ public class ProductInventory
     {
         if (ItemsInStock < amount)
         {
-            ProductShortage?.Invoke(this, EventArgs.Empty);
+            ProductShortageEventArgs args = new ProductShortageEventArgs(ProductName, 10);
+            ProductShortage?.Invoke(this, args);
         }
 
         ItemsInStock -= amount;
