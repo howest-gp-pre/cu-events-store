@@ -5,7 +5,7 @@ public class ProductInventory
     public string ProductName { get; }
     public int ItemsInStock { get; private set; }
 
-    public delegate void ProductShortageHandler(object sender, EventArgs e);
+    public delegate void ProductShortageHandler(object sender, ProductShortageEventArgs e);
 
     public event ProductShortageHandler? ProductShortage;
 
