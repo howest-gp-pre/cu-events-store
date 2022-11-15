@@ -1,12 +1,11 @@
 ﻿namespace Pre.Events.Inventory.Core;
 
-public delegate void ProductShortageHandler(object sender, EventArgs e);
+public delegate void ProductShortageHandler(object sender, ProductShortageEventArgs e);
 
 public class ProductInventory
 {
     public string ProductName { get; }
     public int ItemsInStock { get; private set; }
-
 
     public event ProductShortageHandler? ProductShortage;
 
@@ -27,7 +26,7 @@ public class ProductInventory
     {
         if (ItemsInStock < amount)
         {
-            ProductShortage?.Invoke(this, EventArgs.Empty);
+            ProductShortage?.Invoke(this, new ProductShortageEventArgs(ProductName, 10));
         }
 
         ItemsInStock -= amount;
