@@ -1,11 +1,12 @@
 ﻿namespace Pre.Events.Inventory.Core;
 
+public delegate void ProductShortageHandler(object sender, EventArgs e);
+
 public class ProductInventory
 {
     public string ProductName { get; }
     public int ItemsInStock { get; private set; }
 
-    public delegate void ProductShortageHandler(object sender, EventArgs e);
 
     public event ProductShortageHandler? ProductShortage;
 
@@ -33,5 +34,3 @@ public class ProductInventory
         return ItemsInStock;
     }
 }
-
-
