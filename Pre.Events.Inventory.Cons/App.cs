@@ -5,15 +5,15 @@ namespace Pre.Events.Inventory.Cons
 {
     public class App
     {
-public void Run()
-{
-    Administration a = new Administration();
+        public void Run()
+        {
+            Administration a = new Administration();
 
-    ProductInventory apple = new ProductInventory("Apple");
-    apple.ProductShortage += a.ProductShortageHandlerAdministration;
+            ProductInventory apple = new ProductInventory("Apple");
+            apple.ProductShortage += a.ProductShortageHandlerAdministration;
 
-    DoSimulation(apple);
-}
+            DoSimulation(apple);
+        }
 
         public void DoSimulation(ProductInventory p)
         {
@@ -34,4 +34,3 @@ public void Run()
         }
     }
 }
-
