@@ -38,4 +38,3 @@ namespace Pre.Events.Inventory.Cons
         }
     }
 }
-
