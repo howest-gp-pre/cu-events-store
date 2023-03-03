@@ -10,7 +10,7 @@ namespace Pre.Events.Inventory.Core
 
         public void RunPromotion(object sender, EventArgs e)
         {
-            Console.WriteLine($"Run a promotion");
+            Console.WriteLine("Run a promotion");
         }
     }
 }
