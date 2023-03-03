@@ -7,10 +7,10 @@ namespace Pre.Events.Inventory.Core
         public string Name { get; }
         public int ToBuy { get; }
 
-        public ProductShortageEventArgs(string name, int tobuy)
+        public ProductShortageEventArgs(string name, int toBuy)
         {
             Name = name;
-            ToBuy = tobuy;
+            ToBuy = toBuy;
         }
     }
 }
