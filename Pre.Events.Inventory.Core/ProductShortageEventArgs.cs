@@ -6,10 +6,10 @@ namespace Pre.Events.Inventory.Core
         public Product Product { get; }
         public int ToBuy { get; }
 
-        public ProductShortageEventArgs(Product product, int tobuy)
+        public ProductShortageEventArgs(Product product, int toBuy)
         {
             Product = product;
-            ToBuy = tobuy;
+            ToBuy = toBuy;
         }
     }
 }
