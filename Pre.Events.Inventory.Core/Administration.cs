@@ -5,7 +5,7 @@ namespace Pre.Events.Inventory.Core
     {
         public void ProductShortageHandlerAdministration(object sender, EventArgs e)
         {
-            Console.WriteLine($"There is a shortage of something.");
+            Console.WriteLine("There is a shortage of something.");
         }
     }
 }
