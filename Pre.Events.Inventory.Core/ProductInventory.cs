@@ -6,7 +6,7 @@ public class ProductInventory
     private const int EXCESS_AMOUNT = 100;
     private const int DEFAULT_BUY_AMOUNT = 10;
 
-    public Product Product{ get; }
+    public Product Product { get; }
 
     private int itemsInStock;
     public int ItemsInStock
@@ -35,7 +35,7 @@ public class ProductInventory
 
         set
         {
-            if (!(supplier == null))
+            if (supplier != null)
             {
                 supplier.RemoveProduct(Product);
                 ProductShortage -= supplier.ProductShortageHandlerSupplier;
