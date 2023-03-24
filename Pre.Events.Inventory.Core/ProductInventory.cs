@@ -29,7 +29,7 @@ public class ProductInventory
             ProductShortage?.Invoke(this, new ProductShortageEventArgs(ProductName, 10));
         }
 
-        ItemsInStock -= amount;
+        ItemsInStock = Math.Max(0, ItemsInStock - amount);
         return ItemsInStock;
     }
 }
