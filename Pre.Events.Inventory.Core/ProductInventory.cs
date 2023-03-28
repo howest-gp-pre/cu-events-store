@@ -2,9 +2,9 @@
 
 public class ProductInventory
 {
-    private const int MINIMUM_ITEMS = 5;
-    private const int EXCESS_AMOUNT = 100;
-    private const int DEFAULT_BUY_AMOUNT = 10;
+    private const int MinimumItems = 5;
+    private const int ExcessAmount = 100;
+    private const int DefaultToBuyAmount = 10;
 
     public Product Product { get; }
 
@@ -19,8 +19,8 @@ public class ProductInventory
         set
         {
             if (value < 0) throw new ArgumentException("Not enough in stock");
-            if (value < MINIMUM_ITEMS) ProductShortage?.Invoke(this, new ProductShortageEventArgs(Product, DEFAULT_BUY_AMOUNT));
-            if (value > EXCESS_AMOUNT) ProductExcess?.Invoke(this, new ProductExcessEventArgs(Product, value - EXCESS_AMOUNT));
+            if (value < MinimumItems) ProductShortage?.Invoke(this, new ProductShortageEventArgs(Product, DefaultToBuyAmount));
+            if (value > ExcessAmount) ProductExcess?.Invoke(this, new ProductExcessEventArgs(Product, value - ExcessAmount));
             itemsInStock = value;
         }
     }
