@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Pre.Events.Inventory.Core.Administration">
+    <Position X="1.25" Y="5.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Administration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pre.Events.Inventory.Core.Product">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAQAAAAAEAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pre.Events.Inventory.Core.ProductExcessEventArgs">
+    <Position X="6.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ProductExcessEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pre.Events.Inventory.Core.ProductInventory">
+    <Position X="1.25" Y="0.5" Width="2" />
+    <NestedTypes>
+      <Delegate Name="Pre.Events.Inventory.Core.ProductInventory.ProductShortageHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ProductInventory.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Pre.Events.Inventory.Core.ProductInventory.ProductExcessHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ProductInventory.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>BAoCAAAAAAAAAICAQECAAAAAAAACAAAAQAAAAEAAAAA=</HashCode>
+      <FileName>ProductInventory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pre.Events.Inventory.Core.ProductShortageEventArgs">
+    <Position X="6.5" Y="2.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ProductShortageEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pre.Events.Inventory.Core.Supplier">
+    <Position X="3.5" Y="3" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAIQAQAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Supplier.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

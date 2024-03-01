@@ -2,6 +2,12 @@
 
 public class ProductInventory
 {
+    public delegate void ProductShortageHandler(object sender, ProductShortageEventArgs e);
+    public delegate void ProductExcessHandler(object sender, ProductExcessEventArgs e);
+
+    public event ProductShortageHandler? ProductShortage;
+    public event ProductExcessHandler? ProductExcess;
+
     private const int MinimumItems = 5;
     private const int ExcessAmount = 100;
     private const int DefaultToBuyAmount = 10;
@@ -49,11 +55,7 @@ public class ProductInventory
         }
     }
 
-    public delegate void ProductShortageHandler(object sender, ProductShortageEventArgs e);
-    public delegate void ProductExcessHandler(object sender, ProductExcessEventArgs e);
 
-    public event ProductShortageHandler? ProductShortage;
-    public event ProductExcessHandler? ProductExcess;
 
 
     public ProductInventory(Product product, int initialStock)
